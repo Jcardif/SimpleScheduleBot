@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Connector;
 
 namespace SimpleScheduleBot.Dialogs
@@ -8,20 +10,6 @@ namespace SimpleScheduleBot.Dialogs
     [Serializable]
     public class LuisDialog : LuisDialog<object>
     {
-        public new Task StartAsync(IDialogContext context)
-        {
-            context.Wait(MessageReceivedAsync);
-
-            return Task.CompletedTask;
-        }
-
-        private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            var activity = await result as IMessageActivity;
-
-            // TODO: Put logic for handling user message here
-
-            context.Wait(MessageReceivedAsync);
-        }
+        
     }
 }
