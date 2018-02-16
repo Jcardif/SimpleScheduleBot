@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ScheduleRestClient")]
+[assembly: AssemblyTitle("RestClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ScheduleRestClient")]
+[assembly: AssemblyProduct("RestClient")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("954e1790-90bc-4139-bb78-ce386fd4f500")]
+[assembly: Guid("9bb2cb90-bfba-479b-be55-d0d64a6fd384")]
 
 // Version information for an assembly consists of the following four values:
 //

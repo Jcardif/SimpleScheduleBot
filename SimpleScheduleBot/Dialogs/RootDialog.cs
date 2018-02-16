@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
-
+using RestClient;
 namespace SimpleScheduleBot.Dialogs
 {
     [Serializable]
