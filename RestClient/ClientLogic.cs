@@ -16,18 +16,19 @@ namespace RestClient
         private const string contentTypeValue = "application/json";
         private  HttpResponseMessage response;
 
+
         public async Task<List<Schedule>> GetSchedules()
         {
-            using (var client1 = new HttpClient())
+            using (client = new HttpClient())
             {
-                client1.BaseAddress = new Uri(baseAddress);
-                client1.DefaultRequestHeaders.Accept.Clear();
-                client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentTypeValue));
-                response = await client1.GetAsync("api/schedule");
+                client.BaseAddress = new Uri(baseAddress);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(contentTypeValue));
+
+                response = await client.GetAsync("api/schedule");
                 if (response.IsSuccessStatusCode)
                 {
-                    string result = await response.Content.ReadAsStringAsync();
-                    var scheduleList = JsonConvert.DeserializeObject<List<Schedule>>(result);
+                    var scheduleList = await response.Content.ReadAsAsync<List<Schedule>>();
                     return scheduleList;
                 }
                 else
@@ -35,9 +36,9 @@ namespace RestClient
                     return null;
                 }
             }
-      
+          
 
-            
+
         }
     }
 }
