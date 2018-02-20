@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using RestClient;
+
+
 namespace SimpleScheduleBot.Dialogs
 {
     [Serializable]
@@ -18,8 +21,11 @@ namespace SimpleScheduleBot.Dialogs
         {
             var activity = await result as Activity;
             string command = activity.Text.ToLower();
-            if (command.Contains("get"))
+            if (command.Contains("get all"))
             {
+                ClientLogic cl = new ClientLogic();
+                List<Schedule> schedules = await cl.GetSchedules();
+                await context.PostAsync($"You have {schedules.Count} schedules today.");
             }
 
             context.Wait(MessageReceivedAsync);
