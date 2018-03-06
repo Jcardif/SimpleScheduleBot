@@ -11,15 +11,12 @@ namespace RestClient
 {
     public class ClientLogic
     {
-        private HttpClient client;
         private const string baseAddress = "http://localhost:52834/";
         private const string contentTypeValue = "application/json";
         private  HttpResponseMessage response;
-
-
-        public async Task<List<Schedule>> GetSchedules()
+        public async Task<List<Schedule>> GetSchedules(string date)
         {
-            using (client = new HttpClient())
+            using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(baseAddress);
                 client.DefaultRequestHeaders.Accept.Clear();

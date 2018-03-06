@@ -146,9 +146,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RestClient\RestClient.csproj">
-      <Project>{8a6b25b0-fd57-4ade-bae2-0d84aedcbd90}</Project>
-      <Name>RestClient</Name>
+    <ProjectReference Include="..\..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\SimpleScheduleDatabase.csproj">
+      <Project>{4abcd745-9572-4af2-92ee-5528d7613892}</Project>
+      <Name>SimpleScheduleDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleScheduleRestClient\SimpleScheduleRestClient.csproj">
+      <Project>{40cd8f19-0eae-4f52-9883-ba750fad2722}</Project>
+      <Name>SimpleScheduleRestClient</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
