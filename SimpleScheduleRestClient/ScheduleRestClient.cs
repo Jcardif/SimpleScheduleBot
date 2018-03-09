@@ -15,14 +15,15 @@ namespace SimpleScheduleRestClient
 
         public async Task<string> GetAsync(string date)
         {
-            var date1= date.Replace("/", "%2F");
+            var date1=Convert.ToString(Convert.ToDateTime(date).ToString("d"));
+            var date2 = date1.Replace("/", "%2F");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:52834");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/Json"));
                 HttpResponseMessage response;
-                response = await client.GetAsync($"api/schedule?date={date1}");
+                response = await client.GetAsync($"api/schedule?date={date2}");
                 string result=null;
                 if (response.IsSuccessStatusCode)
                 {

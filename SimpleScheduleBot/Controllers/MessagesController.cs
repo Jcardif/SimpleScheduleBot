@@ -2,23 +2,31 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Connector;
+using SimpleScheduleBot.Forms;
 
 namespace SimpleScheduleBot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        internal static IDialog<WelcomeForm> MakeRootDialog()
+        {
+            return Chain.From(() => FormDialog.FromForm(WelcomeForm.BuildForm));
+        }
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
+        [ResponseType(typeof(void))]
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                await Conversation.SendAsync(activity , MakeRootDialog );
             }
             else
             {

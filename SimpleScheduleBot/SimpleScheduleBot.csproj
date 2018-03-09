@@ -127,8 +127,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Dialogs\LuisDialog.cs" />
-    <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Forms\WelcomeForm.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +153,9 @@
       <Project>{40cd8f19-0eae-4f52-9883-ba750fad2722}</Project>
       <Name>SimpleScheduleRestClient</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
