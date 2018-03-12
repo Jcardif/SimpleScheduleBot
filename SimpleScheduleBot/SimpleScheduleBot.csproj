@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\GetScheduleDialog.cs" />
     <Compile Include="Forms\WelcomeForm.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,18 +146,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\SimpleScheduleDatabase.csproj">
+    <ProjectReference Include="..\..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database.csproj">
       <Project>{4abcd745-9572-4af2-92ee-5528d7613892}</Project>
-      <Name>SimpleScheduleDatabase</Name>
+      <Name>Simple-Schedule-Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleScheduleRestClient\SimpleScheduleRestClient.csproj">
       <Project>{40cd8f19-0eae-4f52-9883-ba750fad2722}</Project>
       <Name>SimpleScheduleRestClient</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialogs\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

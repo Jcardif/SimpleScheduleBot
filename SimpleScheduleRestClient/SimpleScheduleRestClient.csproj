@@ -50,12 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\SimpleScheduleDatabase.csproj">
-      <Project>{4abcd745-9572-4af2-92ee-5528d7613892}</Project>
-      <Name>SimpleScheduleDatabase</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

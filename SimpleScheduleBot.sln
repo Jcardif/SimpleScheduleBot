@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScheduleBot", "Simple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScheduleRestClient", "SimpleScheduleRestClient\SimpleScheduleRestClient.csproj", "{40CD8F19-0EAE-4F52-9883-BA750FAD2722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScheduleDatabase", "..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\SimpleScheduleDatabase.csproj", "{4ABCD745-9572-4AF2-92EE-5528D7613892}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple-Schedule-Database", "..\..\Web\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database\Simple-Schedule-Database.csproj", "{4ABCD745-9572-4AF2-92EE-5528D7613892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
