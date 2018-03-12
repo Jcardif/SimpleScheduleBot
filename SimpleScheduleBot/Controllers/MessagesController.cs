@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -15,7 +16,22 @@ namespace SimpleScheduleBot
     {
         internal static IDialog<WelcomeForm> MakeRootDialog()
         {
-            return Chain.From(() => FormDialog.FromForm(WelcomeForm.BuildForm));
+            return Chain.From(() => FormDialog.FromForm(WelcomeForm.BuildForm)).Do(async (context, option) =>
+            {
+                try
+                {
+                    var completed = await option;
+                    await context.PostAsync("thanks");
+                }
+                catch (FormCanceledException<WelcomeForm> e)
+                {
+                    string reply;
+                    reply = e.InnerException == null
+                        ? $"You quit on {e.Last} -- maybe you can finish next time!"
+                        : "Sorry, I've had a short circuit. Please try again.";
+                    await context.PostAsync(reply);
+                }
+            });
         }
         /// <summary>
         /// POST: api/Messages
